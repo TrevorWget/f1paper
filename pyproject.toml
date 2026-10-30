@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "f1paper"
+version = "0.1.0"
+description = "Automated configurable Formula 1 wallpaper acquisition tool"
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = [
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "Pillow>=10.0",
+    "ImageHash>=4.3",
+    "PyYAML>=6.0",
+    "python-dotenv>=1.0",
+    "screeninfo>=0.8",
+    "praw>=7.7",
+    "twscrape>=0.16",
+    "instaloader>=4.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+f1paper = "f1paper.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["f1paper*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

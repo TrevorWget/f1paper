@@ -1,0 +1,31 @@
+# Copy to the f1paper config dir (see README) or let `f1paper run` create a
+# default one for you, then edit as desired. Run `f1paper config sync-roster`
+# after a season/roster change to pick up new teams/drivers automatically.
+
+resolution: auto   # "auto" (detect primary monitor) or e.g. "2560x1440"
+history_size: 30
+off_week_buffer_days: 1
+min_resolution_required: true
+reddit_include_untagged: false
+
+sources:
+  f1_official: true
+  reddit: true
+  twitter: true
+  instagram: true
+
+teams:
+  mercedes:     { enabled: true, weight: 100 }
+  red_bull:     { enabled: true, weight: 100 }
+  ferrari:      { enabled: true, weight: 100 }
+  mclaren:      { enabled: true, weight: 100 }
+  aston_martin: { enabled: true, weight: 100 }
+  alpine:       { enabled: true, weight: 100 }
+  williams:     { enabled: true, weight: 100 }
+  racing_bulls: { enabled: true, weight: 100 }
+  kick_sauber:  { enabled: true, weight: 100 }
+  haas:         { enabled: true, weight: 100 }
+
+# Populated/updated via `f1paper config sync-roster`; edit weights by hand
+# with `f1paper config driver <driver_id> --weight N`.
+drivers: {}
